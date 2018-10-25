@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <h2 class="mb-5 ml-5">
+   Internet Plans List
+  </h2>
+
+  <div class="alert alert-warning" *ngIf="!plans || plans.length==0">
+   Plans could not be found or loaded
+  </div>
+
+  <div class="row" *ngIf="plans && plans.length>0">
+    <div class="col-lg-2 ml-1 mb-1" *ngFor="let c of plans">
+      <div class="card" >
+        <img class="card-img-top"/>
+        <div class="card-body">
+          <h6 class="card-title">{{c.title}}</h6>
+          <p class="card-text">
+            {{c.maxSpeed}}MBPS
+            <br />
+          </p>
+          <p class="card-text">
+            {{c.maxUsage}}GB FUP
+            <br />
+          </p>
+          <p class="card-text">
+            Rs. {{c.maxCost}}
+            <br />
+          </p>
+          <a routerLink="/addOrder/{{c.title}}" class="btn">
+           APPLY
+          </a>
+        </div>
+         </div>
+    </div>
+  </div>
+</div>

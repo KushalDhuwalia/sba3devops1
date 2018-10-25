@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" routerLink="/">
+    <img [src]="logoUrl" style="width:40px" /> {{title}}
+  </a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/listplans">
+       
+        List Plans</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/addOrder">
+       
+        New Request Order</a>
+    </li>
+  </ul>
+
+  <form class="form-inline">
+      <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary" 
+              (click)="doChangeField('maxSpeed',srch)">
+              Speed
+              </button>
+              <button type="button" class="btn btn-primary" 
+              (click)="doChangeField('maxUsage',srch)">
+              Usage
+              </button>
+              <button type="button" class="btn btn-primary" 
+              (click)="doChangeField('maxCost',srch)">
+              Cost
+              </button>
+            </div>
+          </div>
+          <input type="text" name="srchValue" class="form-control" 
+          [(ngModel)]="srchValue"
+          required #srch placeholder="Speed" />
+          <div class="input-group-prepend">
+            <button class="btn btn-primary" (click)="doSearch()">
+              Search
+            </button>
+          </div>
+        </div>
+  </form>
+</nav>
+<router-outlet></router-outlet>

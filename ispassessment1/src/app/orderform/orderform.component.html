@@ -1,0 +1,77 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-sm-9 m-auto">
+      <h3 class="mb-5 mt-5">New Connection Order</h3>
+
+      <form class="form" #f="ngForm" novalidate (ngSubmit)="save()">
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+               
+              </span>
+            </div>
+            <input type="text" class="form-control" id="title" name="title" required minlength="5" maxlength="15"
+              [(ngModel)]="order.title" #title=ngModel placeholder="title" />
+            <input type="text" class="form-control" id="name" name="name" required minlength="5" maxlength="15"
+              [(ngModel)]="order.name" #name=ngModel placeholder="Customer Name" />
+          </div>
+          
+        </div>
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+               
+              </span>
+            </div>
+            <input type="text" class="form-control" id="mno" name="mno" required pattern="\d{10}" [(ngModel)]="order.mobileNumber"
+              #mno=ngModel placeholder="Mobile Number" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+         
+              </span>
+            </div>
+            <input type="textarea" class="form-control" id="address" name="address" required 
+              [(ngModel)]="order.address" #address=ngModel placeholder="Address"  />
+          </div>
+          
+        </div>
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+            </span>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="timeslot" value="9AM-11AM" required [(ngModel)]="order.timeSlot"
+                  #gender=ngModel />9AM-11AM
+              </label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="timeslot" value="1PM-3PM" required [(ngModel)]="order.timeSlot"
+                  #gender=ngModel />1PM-3PM
+              </label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="timeslot" value="4PM-6PM" required [(ngModel)]="order.timeSlot"
+                  #gender=ngModel />4PM-6PM
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <button class="btn btn-block btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
